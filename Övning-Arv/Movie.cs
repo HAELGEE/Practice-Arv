@@ -23,8 +23,8 @@ internal class Movie
 
     void GetActors()
     {
-        Actors.Add(new Actor("Tom Cruise", 1970));
-        Actors.Add(new Actor("Arnold Schwarzenegger", 1955));
+        Actors.Add(new Actor("- Tom Cruise", 1970));
+        Actors.Add(new Actor("- Arnold Schwarzenegger", 1955));
     }
 }
 class Comedy : Movie
