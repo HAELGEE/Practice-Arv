@@ -26,6 +26,16 @@ internal class Movie
         Actors.Add(new Actor("- Tom Cruise", 1970));
         Actors.Add(new Actor("- Arnold Schwarzenegger", 1955));
     }
+
+    public virtual void ShowMovie()
+    {
+        Console.WriteLine($"Filmen {Title} är {RunningTime} min lång, och har följande skådespelare:");
+        foreach (Actor actor in Actors)
+        {
+            Console.WriteLine($"{actor.Name} (född {actor.BirthYear})");
+        }
+        Console.WriteLine();
+    }
 }
 class Comedy : Movie
 {
@@ -35,6 +45,20 @@ class Comedy : Movie
     {
         NumberOfFunnyScenes = numberOfFunnyScenes;
     }
+
+
+    public override void ShowMovie()
+    {
+        Console.WriteLine($"Filmen {Title} är {RunningTime} min lång, och har följande skådespelare:");
+        foreach (Actor actor in Actors)
+        {
+            Console.WriteLine($"{actor.Name} (född {actor.BirthYear})");
+        }
+        Console.Write($"Filmen innehåller ");
+        Console.WriteLine($"{NumberOfFunnyScenes} roliga scener.");
+        Console.WriteLine("-----------------------------------------");
+    }
+
 }
 
 class Action : Movie
@@ -45,6 +69,18 @@ class Action : Movie
     {
         NumberOfShotsFired = numberOfShotsFired;
     }
+    public override void ShowMovie()
+    {
+        Console.WriteLine($"Filmen {Title} är {RunningTime} min lång, och har följande skådespelare:");
+        foreach (Actor actor in Actors)
+        {
+            Console.WriteLine($"{actor.Name} (född {actor.BirthYear})");
+        }
+        Console.Write($"Filmen innehåller ");
+        Console.WriteLine($"I filmen skjuts det {NumberOfShotsFired} gånger.");
+        Console.WriteLine("-----------------------------------------");
+
+    }
 }
 
 class SciFi : Movie
@@ -53,6 +89,18 @@ class SciFi : Movie
     public SciFi(string title, int runningTime, int numberOfSpaceShips) : base(title, runningTime)
     {
         NumberOfSpaceShips = numberOfSpaceShips;
+    }
+    public override void ShowMovie()
+    {
+        Console.WriteLine($"Filmen {Title} är {RunningTime} min lång, och har följande skådespelare:");
+        foreach (Actor actor in Actors)
+        {
+            Console.WriteLine($"{actor.Name} (född {actor.BirthYear})");
+        }
+        Console.Write($"Filmen innehåller ");
+        Console.WriteLine($"Filmen innehåller minst {NumberOfSpaceShips} rymdskepp");
+        Console.WriteLine("-----------------------------------------");
+
     }
 }
 
